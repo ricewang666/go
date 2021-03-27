@@ -6,5 +6,5 @@ import (
 
 func Test(t *testing.T) {
 
-	t.Log("aesedwadfsefs")
+	t.Log("ricewang")
 }
