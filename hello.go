@@ -1,21 +1,14 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+func trace(s string)   { fmt.Println("entering:", s) }
+func untrace(s string) { fmt.Println("leaving:", s) }
 
 func main() {
-	var a int = 1
-	var b int = 1
-	fmt.Println(a)
-	fmt.Println(b)
-
-	for i := 0; i < 6; i++ {
-		fmt.Println(b)
-		tmp := a
-		a = b
-		b = tmp + a
-
+	trace("i")
+	defer untrace("i")
+	for i := 0; i < 5; i++ {
+		fmt.Printf("%d ", i)
 	}
-
 }
